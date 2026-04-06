@@ -1,0 +1,24 @@
+name: Demo CI
+on:
+  push:
+    branches:
+      - feature
+
+jobs:
+  build:
+    name: Build job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Print info
+        env:
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref }}
+          USER: ${{ github.actor }}
+        run: |
+          echo "Repository is : $REPO"
+          echo "Branch is : $BRANCH"
+      - name: Demo build
+        run: echo "Build completed successfully"
+
