@@ -1,7 +1,8 @@
 name: 02-PR-CI
 on:
   pull_request:
-    branches: [main]
+    branches: 
+      - task-2
 
 jobs:
   validate:
